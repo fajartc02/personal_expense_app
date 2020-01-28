@@ -26,6 +26,12 @@ class MyHomePage extends StatelessWidget {
         amount: 16.53,
         date: DateTime.now()),
   ];
+  // if we declare variable will be changes input, Stateless is not good to do this
+  // String titleInput;
+  // String amountInput;
+
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -54,16 +60,30 @@ class MyHomePage extends StatelessWidget {
                   children: <Widget>[
                     TextField(
                       decoration: InputDecoration(labelText: 'Title'),
+                      controller: titleController,
+                      // we can added onChange for stream TextField
+                      // onChanged: (val) {
+                      //   titleInput = val;
+                      // },
                     ),
                     TextField(
                       decoration: InputDecoration(labelText: 'Amount'),
+                      // controller will make your code clean, becasue you don't need declare func. on yout widget
+                      controller: amountController,
+                      // onChanged: (val) => amountInput = val,
                     ),
                     FlatButton(
                       child: Text(
                         'Add Transaction',
                         style: TextStyle(color: Colors.purple),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        // titleController will be render title input changes
+                        print(titleController.text);
+
+                        // print(titleInput);
+                        // print(amountInput);
+                      },
                     )
                   ],
                 ),
