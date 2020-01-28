@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../models/transaction.dart';
+
 class TransactionsList extends StatelessWidget {
-  final transactions = [];
+  // this for containing parsing data from user_transactions
+  final List<Transaction> transactions;
+
+  TransactionsList(this.transactions);
+
   @override
   Widget build(BuildContext context) {
     return Column(
