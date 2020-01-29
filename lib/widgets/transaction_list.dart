@@ -28,7 +28,8 @@ class TransactionsList extends StatelessWidget {
                     child: Text(
                       // tx.amount.toString(),
                       // string interpolation, \$ is not interpolation but string
-                      '\$${transactions[index].amount}',
+                      // toStringAsFixed will round your value NOTE: you can use another function for cond
+                      '\$${transactions[index].amount.toStringAsFixed(2)}',
                       style: TextStyle(
                           color: Colors.purple,
                           fontWeight: FontWeight.bold,
