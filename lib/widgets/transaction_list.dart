@@ -31,13 +31,16 @@ class TransactionsList extends StatelessWidget {
                       // toStringAsFixed will round your value NOTE: you can use another function for cond
                       '\$${transactions[index].amount.toStringAsFixed(2)}',
                       style: TextStyle(
-                          color: Colors.purple,
+                          color: Theme.of(context).primaryColor,
                           fontWeight: FontWeight.bold,
                           fontSize: 20),
                     ),
                     margin: EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                        border: Border.all(width: 1, color: Colors.purple)),
+                        border: Border.all(
+                      width: 1,
+                      color: Theme.of(context).primaryColor,
+                    )),
                     padding: EdgeInsets.all(10),
                   ),
                   Column(
