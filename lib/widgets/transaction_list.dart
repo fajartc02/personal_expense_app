@@ -18,7 +18,8 @@ class TransactionsList extends StatelessWidget {
         // this IMPACT TO PERFORMANCE APPS
         // Please implement ListView in Container
         child: ListView.builder(
-          itemBuilder: (ctx, index) {
+          // ctx is shortcut for BuildContext context
+          itemBuilder: (BuildContext context, index) {
             return Card(
               child: Row(
                 children: <Widget>[
