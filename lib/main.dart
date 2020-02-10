@@ -75,8 +75,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   List<Transaction> get _recentTransaction {
-    // .where using for whenever you want to run function pada setiap list
+    // .where using for whenever you want to run function every list
     // if into list return true, and containing on value will be give back
+    // matching tx and calculate
     return _userTransactions.where((tx) {
       return tx.date.isAfter(
         DateTime.now().subtract(
